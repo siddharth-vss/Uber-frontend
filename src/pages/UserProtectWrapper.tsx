@@ -1,7 +1,12 @@
+import React from "react";
 
-const UserProtectWrapper = () => {
+interface Wrapper {
+  children: React.ReactNode;
+}
+
+const UserProtectWrapper :React.FC<Wrapper> = ({children}) => {
   return (
-    <div>UserProtectWrapper</div>
+    <div>{children}</div>
   )
 }
 

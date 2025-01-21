@@ -1,8 +1,12 @@
+import React from "react";
 
-const CaptainProtectWrapper = () => {
-  return (
-    <div>CaptainProtectWrapper</div>
-  )
+interface Wrapper {
+    children: React.ReactNode;
+}
+const CaptainProtectWrapper :React.FC<Wrapper> = ({ children }) => {
+    return (
+        <div>{children}</div>
+    )
 }
 
 export default CaptainProtectWrapper
