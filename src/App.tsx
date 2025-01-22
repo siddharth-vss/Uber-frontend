@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { CaptainHome, Captainlogin, CaptainLogout, CaptainProtectWrapper, CaptainRiding, CaptainSignup, Home, Riding, Start, UserLogin, UserLogout, UserProtectWrapper, UserSignup } from './pages'
+import 'remixicon/fonts/remixicon.css'
 
 const App = () => {
   return (
