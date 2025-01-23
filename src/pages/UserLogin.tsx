@@ -16,6 +16,7 @@ const UserLogin = () => {
   const submitHandler = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
+    alert();
     const userData = {
       email: email,
       password: password
@@ -25,6 +26,7 @@ const UserLogin = () => {
 
     if (response) {
       setUser(response.user)
+      console.log(response);
       localStorage.setItem('token', response.token)
       navigate('/home')
     }
