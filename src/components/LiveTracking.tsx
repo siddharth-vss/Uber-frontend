@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { LoadScript, GoogleMap, Marker } from '@react-google-maps/api'
+// import { LoadScript, GoogleMap, Marker } from '@react-google-maps/api'
 
 const containerStyle = {
     width: '100%',
@@ -12,7 +12,7 @@ const center = {
 };
 
 const LiveTracking = () => {
-    const [ currentPosition, setCurrentPosition ] = useState(center);
+    const [currentPosition, setCurrentPosition] = useState(center);
 
     useEffect(() => {
         navigator.geolocation.getCurrentPosition((position) => {
@@ -53,8 +53,8 @@ const LiveTracking = () => {
 
     }, []);
 
-    return (
-        <LoadScript googleMapsApiKey={import.meta.env.VITE_GOOGLE_MAPS_API_KEY}>
+    return (<>
+        {/* <LoadScript googleMapsApiKey={import.meta.env.VITE_GOOGLE_MAPS_API_KEY}>
             <GoogleMap
                 mapContainerStyle={containerStyle}
                 center={currentPosition}
@@ -62,7 +62,8 @@ const LiveTracking = () => {
             >
                 <Marker position={currentPosition} />
             </GoogleMap>
-        </LoadScript>
+        </LoadScript> */}
+    </>
     )
 }
 

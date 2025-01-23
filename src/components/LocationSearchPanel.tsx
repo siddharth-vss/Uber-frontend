@@ -1,14 +1,23 @@
 
-const LocationSearchPanel = ({ suggestions, setVehiclePanel, setPanelOpen, setPickup, setDestination, activeField }) => {
+interface LocationSearchPanelProps {
+    suggestions: string[];
+    setVehiclePanel: (value: boolean) => void;
+    setPanelOpen: (value: boolean) => void;
+    setPickup: (suggestion: string) => void;
+    setDestination: (suggestion: string) => void;
+    activeField: 'pickup' | 'destination';
+}
 
-    const handleSuggestionClick = (suggestion) => {
+const LocationSearchPanel: React.FC<LocationSearchPanelProps> = ({ suggestions, setVehiclePanel, setPanelOpen, setPickup, setDestination, activeField }) => {
+
+    const handleSuggestionClick = (suggestion : string) => {
         if (activeField === 'pickup') {
             setPickup(suggestion)
         } else if (activeField === 'destination') {
             setDestination(suggestion)
         }
-        // setVehiclePanel(true)
-        // setPanelOpen(false)
+        setVehiclePanel(true)
+        setPanelOpen(false)
     }
 
     return (
